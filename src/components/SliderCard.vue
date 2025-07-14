@@ -4,17 +4,14 @@
       <v-col cols="8">
         <!-- Main image -->
         <v-carousel v-model="mainIndex" height="400" :cycle="cycle" hide-delimiters :show-arrows="false" class="carousel-container">
-          <v-carousel-item v-for="(item, i) in items" :key="i">
-            <v-sheet height="100%" tile class="carousel-item">
-              <v-row class="fill-height house-images" align="center" justify="center">
-                <v-img :src="require(`@/assets/houses/${item.src}`)" height="400" contain></v-img>
-              </v-row>
+          <v-carousel-item v-for="(item, i) in items" :key="i" :src="require(`@/assets/houses/${item.src}`)">
+            <v-row class="fill-height house-images" align="center" justify="center">
               <v-card flat color="white" class="info-card">
                 <v-row align="center" justify="center">
                   <span>{{ item.address }}<br>{{ item.price }}</span>
                 </v-row>  
               </v-card>
-            </v-sheet>
+            </v-row>
           </v-carousel-item>
         </v-carousel>
 
@@ -102,7 +99,6 @@ props: {
   data() {
     return {
       selectedIndex: 0,
-      seasons: ['For Sale', 'For Rent'],
       mainIndex: 0,
       saleType: 1,
       location: null,
@@ -116,12 +112,6 @@ props: {
     };
   },
   methods: {
-     season(val) {
-      return this.icons[val];
-    },
-    updateSlider(index) {
-      this.selectedIndex = index; 
-    },
     prevSlide() {
       this.mainIndex = (this.mainIndex - 1 + this.items.length) % this.items.length;
     },

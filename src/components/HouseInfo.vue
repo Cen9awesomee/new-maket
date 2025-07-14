@@ -30,10 +30,10 @@
                     <p>{{ house.address }}</p>
                     <p>Beds: {{ house.beds }}</p>
                     <p>Baths: {{ house.baths }}</p>
-                    <p><v-icon small>fas fa-video</v-icon> {{ house.videos }}</p>
+                    <p><v-icon color="#fff" small>fas fa-video</v-icon> {{ house.videos }}</p>
                     <v-card flat color="white" class="info-map">
                 <v-row align="center" justify="center">
-                  <span>MAP</span>
+                  <v-icon size="15" class="location-dot">fas fa-location-dot</v-icon><span>MAP</span>
                 </v-row>  
               </v-card>
                   </div>
@@ -44,9 +44,12 @@
           <v-card-text class="price-text text-center">
             ${{ house.price.toLocaleString() }}
           </v-card-text>
-          <v-card-actions class="justify-center">
-            <v-btn class="view-button" rounded text color="primary" @click="viewDetails(house)">VIEW DETAILS</v-btn>
+          <v-card-actions class="view-details-container">
+            <div class="line-button-wrapper">
+              <v-btn class="view-button" rounded text color="primary" @click="viewDetails(house)">VIEW DETAILS</v-btn>
+            </div>
           </v-card-actions>
+          <div class="dotted-lines"></div>
         </v-card>
       </v-col>
     </v-row>
