@@ -15,7 +15,15 @@
             </li>
           </ul>
         </nav>
-        <SliderCard />
+        <SliderCard 
+          :items="items"
+          :locations="locations"
+          :property-types="propertyTypes"
+          :square-feet-options="squareFeetOptions"
+          :bed-options="bedOptions"
+          :bath-options="bathOptions"
+          :price-options="priceOptions"        
+        />
         <v-row class="card-row">
           <v-col cols="12" md="9">
             <v-row>
@@ -24,7 +32,7 @@
               <v-col cols="12" md="6">
                 <v-card class="card-royal" flat>
                   <v-card-text class="text-center d-flex flex-column justify-center align-center fill-height">
-                    <v-avatar size="200" class="mt-2">
+                    <v-avatar size="200" class="mt-2">к
                       <img src="@/assets/avatar.jpg" />
                     </v-avatar>
                     <h3 class="mt-3">About Royal Estate</h3>
@@ -206,8 +214,6 @@ export default {
       navItems: ['Home', 'Browse', 'Listings', 'Buying', 'Selling', 'Renting', 'About', 'Services', 'FAQs', 'Contact'],
       activeTab: 'Home',
       saleType: 'sale',
-      locations: ['City A', 'City B'],
-      types: ['House', 'Apartment'],
       houseData: [
         {
           id: 1,
@@ -290,6 +296,44 @@ export default {
         'fab fa-linkedin',
         'fab fa-instagram',
       ],
+      items: [
+        {
+          src: 'house1.jpg',
+          thumbnailSrc: 'house1.jpg',
+          address: 'Big American House 1',
+          price: '$500.000.00',
+        },
+        {
+          src: 'house2.jpg',
+          thumbnailSrc: 'house2.jpg',
+          address: 'Big American House 2',
+          price: '$280.000.00',
+        },
+        {
+          src: 'house3.jpg',
+          thumbnailSrc: 'house3.jpg',
+          address: 'Big American House 3',
+          price: '$340.000.00',
+        },
+        {
+          src: 'house4.jpg',
+          thumbnailSrc: 'house4.jpg',
+          address: 'Big American House 4',
+          price: '$450.000.00',
+        },
+        {
+          src: 'house5.jpg',
+          thumbnailSrc: 'house5.jpg',
+          address: 'Big American House 5',
+          price: '$300.000.00',
+        },
+      ],
+      locations: ['New York', 'Los Angeles', 'Chicago'],
+      propertyTypes: ['House', 'Apartment', 'Condo'],
+      squareFeetOptions: ['1000', '1500', '2000', '2500+'],
+      bedOptions: ['1', '2', '3', '4+'],
+      bathOptions: ['1', '2', '3', '4+'],
+      priceOptions: ['$100.000', '$200.000', '$300.000', '$400.000', '$500.000+'],
       checkbox: true,
     }
   },

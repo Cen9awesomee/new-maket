@@ -21,11 +21,11 @@
         </v-item-group>
       </div>
       <div class="buttons-container">
-        <v-btn icon @click="prev">
-          <v-icon>fas fa-chevron-left</v-icon>
+        <v-btn class="round-button" icon @click="prev">
+          <v-icon size="20">fas fa-chevron-left</v-icon>
         </v-btn>
-        <v-btn icon @click="next">
-          <v-icon>fas fa-chevron-right</v-icon>
+        <v-btn class="round-button" icon @click="next">
+          <v-icon size="20">fas fa-chevron-right</v-icon>
         </v-btn>
       </div>
     </div>
