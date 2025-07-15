@@ -18,9 +18,9 @@
         <!-- Small image, buttons -->
           <v-col cols="12">
             <v-row>
-              <v-col v-for="(item, i) in items" :key="i" cols="2" class="small-card pa-1">
-                <v-card @click="mainIndex = i" :color="mainIndex === i ? 'grey lighten-2' : ''" height="100">
-                  <v-img :src="require(`@/assets/houses/${item.src}`)" height="100" contain></v-img>
+              <v-col v-for="(item, i) in items" :key="i" cols="2" class="pa-0" :class="['small-card', { 'active-thumb': mainIndex === i }]">
+                <v-card @click="mainIndex = i" flat tile class="thumb-card">
+                  <v-img :src="require(`@/assets/houses/${item.src}`)" height="100" class="custom-image"></v-img>
                 </v-card>
               </v-col>
               <v-col cols="1">
@@ -101,13 +101,12 @@ props: {
       selectedIndex: 0,
       mainIndex: 0,
       saleType: 1,
-      location: null,
-      propertyType: null,
-      squareFeet: null,
-      beds: null,
-      baths: null,
-      minPrice: null,
-      maxPrice: null,
+      
+      
+      
+      
+     
+      
       cycle: true,
     };
   },

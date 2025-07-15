@@ -8,7 +8,7 @@
               <v-icon>fas fa-chevron-left</v-icon>
             </v-btn>
             <div class="image-info">
-              <v-icon size="17">fas fa-camera</v-icon>
+              <v-icon size="17" color="#2f5178">fas fa-camera</v-icon>
               <span>{{ house.images.length }} IMAGES AVAILBLE</span>
             </div>
             <v-btn icon @click="nextImage(index)">
