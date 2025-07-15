@@ -101,7 +101,6 @@ props: {
     return {
       selectedIndex: 0,
       mainIndex: 0,
-      saleType: 1,
       location: null,
       propertyType: null,
       squareFeet: null,

@@ -198,8 +198,6 @@ import FeedbackSlider from './components/FeedbackSlider.vue';
 import HouseInfo from './components/HouseInfo.vue';
 import SliderCard from './components/SliderCard.vue';
 
-
-
 export default {
   components: {
     SliderCard,
@@ -217,7 +215,6 @@ export default {
       monthlyPayment: 0,
       navItems: ['Home', 'Browse', 'Listings', 'Buying', 'Selling', 'Renting', 'About', 'Services', 'FAQs', 'Contact'],
       activeTab: 'Home',
-      saleType: 'sale',
       houseData: [
         {
           id: 1,
