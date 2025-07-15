@@ -32,7 +32,7 @@
               <v-col cols="12" md="6">
                 <v-card class="card-royal" flat>
                   <v-card-text class="text-center d-flex flex-column justify-center align-center fill-height">
-                    <v-avatar size="200" class="mt-2">к
+                    <v-avatar size="200" class="mt-2">
                       <img src="@/assets/avatar.jpg" />
                     </v-avatar>
                     <h3 class="mt-3">About Royal Estate</h3>
@@ -208,6 +208,8 @@ export default {
   },
   data() {
     return {
+      username: '',
+      password: '',
       amount: null,
       downPayment: null,
       years: null,
