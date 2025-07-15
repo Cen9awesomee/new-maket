@@ -145,6 +145,8 @@
                 <v-col cols="12">
                   <v-row justify="end">
                     <v-btn color="orange lighten-2" class="login-btn" @click="calculatePayment">Calculate</v-btn>
+                  </v-row>
+                  <v-row justify="end">
                     <div class="monthly-payment">Payments will be:  ${{ monthlyPayment.toFixed(2) }}</div>
                   </v-row>
                 </v-col>
@@ -334,7 +336,7 @@ export default {
       bedOptions: ['1', '2', '3', '4+'],
       bathOptions: ['1', '2', '3', '4+'],
       priceOptions: ['$100.000', '$200.000', '$300.000', '$400.000', '$500.000+'],
-      checkbox: true,
+      checkbox: false,
     }
   },
 

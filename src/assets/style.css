@@ -723,3 +723,19 @@ html, body, * {
   margin-right: 5px;
 }
 
+.custom-select .v-input__append-inner {
+  background-color: #aca8a8;
+  height: 40px;
+  width: 40px;
+  margin-top: 0 !important;
+  margin-right: -12px !important;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.custom-select .v-input__append-inner .v-icon {
+  color: #ffffff; 
+  font-size: 30px;
+  margin-top: 15px;
+  margin-right: 5px;
+}

@@ -5,14 +5,14 @@
         <v-card class="house-card" flat>
           <v-card-text class="d-flex justify-space-between align-center">
             <v-btn icon @click="prevImage(index)">
-              <v-icon>fas fa-chevron-left</v-icon>
+              <v-icon>fas fa-caret-left</v-icon>
             </v-btn>
             <div class="image-info">
               <v-icon size="17" color="#2f5178">fas fa-camera</v-icon>
               <span>{{ house.images.length }} IMAGES AVAILBLE</span>
             </div>
             <v-btn icon @click="nextImage(index)">
-              <v-icon>fas fa-chevron-right</v-icon>
+              <v-icon>fas fa-caret-right</v-icon>
             </v-btn>
           </v-card-text>
           <v-card-text class="image-container">

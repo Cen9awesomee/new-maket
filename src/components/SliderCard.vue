@@ -65,10 +65,11 @@
             <v-row>
               <v-col cols="6">
                 <v-select v-model="beds" label="Beds" :items="bedOptions" outlined dense class="custom-select"></v-select>
-                <v-select v-model="baths" label="Baths" :items="bathOptions" outlined dense class="custom-select"></v-select>
+                <v-select v-model="minPrice" label="Min price" :items="priceOptions" outlined dense class="custom-select"></v-select>
+                
               </v-col>
               <v-col cols="6">
-                <v-select v-model="minPrice" label="Min price" :items="priceOptions" outlined dense class="custom-select"></v-select>
+                <v-select v-model="baths" label="Baths" :items="bathOptions" outlined dense class="custom-select"></v-select>
                 <v-select v-model="maxPrice" label="Max Price" :items="priceOptions" outlined dense class="custom-select"></v-select>
               </v-col>
             </v-row>
@@ -101,12 +102,13 @@ props: {
       selectedIndex: 0,
       mainIndex: 0,
       saleType: 1,
-      
-      
-      
-      
-     
-      
+      location: null,
+      propertyType: null,
+      squareFeet: null,
+      beds: null,
+      baths: null,
+      minPrice: null,
+      maxPrice: null,
       cycle: true,
     };
   },
