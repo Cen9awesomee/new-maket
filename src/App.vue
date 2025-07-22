@@ -5,25 +5,34 @@
         <div class="logo">
           <img src="@/assets/House-Logo.png" class="logo-image" />
         </div>
-          <div class="contact">Toll Free: 0081 123-456</div>
+        <div class="contact">Toll Free: 0081 123-456</div>
       </header>
       <div class="main-container">
-        <nav class="nav">
-          <ul>
-            <li v-for="item in navItems" :key="item" :class="{ active: activeTab === item }" @click="activeTab = item">
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <ul>
+              <li v-for="item in navItems" :key="item" :class="{ active: activeTab === item }" @click="activeTab = item">
               {{ item }}
-            </li>
-          </ul>
-        </nav>
-        <SliderCard 
-          :items="items"
-          :locations="locations"
-          :property-types="propertyTypes"
-          :square-feet-options="squareFeetOptions"
-          :bed-options="bedOptions"
-          :bath-options="bathOptions"
-          :price-options="priceOptions"        
-        />
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <v-container fluid class="pa-0">
+          <v-row>
+            <SliderCard 
+              :items="items"
+              :cycle="true" 
+            />
+            <FilterBox
+              :locations="locations"
+              :property-types="propertyTypes"
+              :square-feet-options="squareFeetOptions"
+              :bed-options="bedOptions"
+              :bath-options="bathOptions"
+              :price-options="priceOptions"   
+            />
+          </v-row>
+        </v-container>
         <v-row class="card-row">
           <v-col cols="12" md="9">
             <v-row>
@@ -32,11 +41,11 @@
               <v-col cols="12" md="6">
                 <v-card class="card-royal" flat>
                   <v-card-text class="text-center d-flex flex-column justify-center align-center fill-height">
-                    <v-avatar size="200" class="mt-2">
+                    <v-avatar size="200" class="mt-2 avatar-image">
                       <img src="@/assets/avatar.jpg" />
                     </v-avatar>
                     <h3 class="mt-3">About Royal Estate</h3>
-                    <p class="card-text">Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history.</p>
+                    <p class="card-text-royal">Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history.</p>
                   </v-card-text>
                 </v-card>
               </v-col>
@@ -46,7 +55,7 @@
                 <v-card class="card-support" flat>
                   <v-card-text class="d-flex flex-row align-center fill-height">
                     <v-col cols="3">
-                      <v-icon size="60" color="light-blue darken-4" class="ma-0">fas fa-headphones-simple</v-icon>
+                      <v-icon size="60" color="light-blue darken-4" class="icons-cards">fas fa-headphones-simple</v-icon>
                     </v-col>
                     <v-col cols="9">
                       <h3 class="card-title">Live Support</h3>
@@ -59,7 +68,7 @@
                 <v-card class="card-friendly" flat>
                   <v-card-text class="d-flex flex-row align-center fill-height">
                     <v-col cols="3">
-                      <v-icon size="60" color="light-blue darken-4" class="ma-0">fas fa-circle-user</v-icon>
+                      <v-icon size="60" color="light-blue darken-4" class="icons-cards">fas fa-circle-user</v-icon>
                     </v-col>
                     <v-col cols="9">
                       <h3 class="card-title">User Friendly</h3>
@@ -72,7 +81,7 @@
                 <v-card class="card-code" flat>
                   <v-card-text class="d-flex flex-row align-center fill-height">
                     <v-col cols="3">
-                      <v-icon size="60" color="light-blue darken-4" class="ma-0">fas fa-gauge-high</v-icon>
+                      <v-icon size="60" color="light-blue darken-4" class="icons-cards">fas fa-gauge-high</v-icon>
                     </v-col>
                     <v-col cols="9">
                       <h3 class="card-title">Clean Code</h3>
@@ -88,28 +97,28 @@
           <v-col cols="12" md="3">
             <v-card class="login-card" flat>
               <v-card-title class="login-title">USER LOGIN</v-card-title>
-                <v-card-text>
-                  <div class="field-label">Username</div>
-                  <v-text-field v-model="username" outlined dense></v-text-field>
-                  <div class="field-label">Password</div>
-                  <v-text-field v-model="password" type="password" outlined dense></v-text-field>
-                  <v-row justify="end">
-                    <v-col cols="9" class="text-right">
-                      <v-checkbox v-model="checkbox" label="Remember me" dense hide-details></v-checkbox>
-                    </v-col>
-                  </v-row>
-                  <v-col cols="12">
-                    <v-row justify="end">
-                      <v-btn color="orange lighten-2" class="login-btn">Login</v-btn>
-                    </v-row>
-                    <v-row justify="end">
-                      <a href="#" class="forgot-password">I forgot my password</a>
-                    </v-row>
-                    <v-row justify="end">
-                      <a href="#" class="create-account">Create an account</a>
-                    </v-row>
+              <v-card-text>
+                <div class="field-label">Username</div>
+                <v-text-field v-model="username" outlined dense></v-text-field>
+                <div class="field-label">Password</div>
+                <v-text-field v-model="password" type="password" outlined dense></v-text-field>
+                <v-row justify="end">
+                  <v-col cols="9" class="text-right">
+                    <v-checkbox class="checkbox-label" v-model="checkbox" label="Remember me" dense hide-details></v-checkbox>
                   </v-col>
-                </v-card-text>
+                </v-row>
+                <v-col cols="12">
+                  <v-row justify="end">
+                    <v-btn color="orange lighten-2" class="login-btn">Login</v-btn>
+                  </v-row>
+                  <v-row justify="end">
+                    <a href="#" class="forgot-password">I forgot my password</a>
+                  </v-row>
+                  <v-row justify="end">
+                    <a href="#" class="create-account">Create an account</a>
+                  </v-row>
+                </v-col>
+              </v-card-text>
             </v-card>
           </v-col>
 
@@ -125,7 +134,7 @@
            <!-- Calculator -->
            <v-card class="calculator-card" flat>
              <v-card-title class="login-title">LOAN CALCULATOR</v-card-title>
-              <v-card-text>
+             <v-card-text>
                 <div class="input-row">
                   <div class="calculate-label">Amount</div>
                   <v-text-field class="calculate-field" v-model.number="amount" outlined dense @input="resetMonthlyPayment"></v-text-field>
@@ -195,6 +204,7 @@
 
 <script>
 import FeedbackSlider from './components/FeedbackSlider.vue';
+import FilterBox from './components/FilterBox.vue';
 import HouseInfo from './components/HouseInfo.vue';
 import SliderCard from './components/SliderCard.vue';
 
@@ -202,7 +212,8 @@ export default {
   components: {
     SliderCard,
     HouseInfo,
-    FeedbackSlider
+    FeedbackSlider,
+    FilterBox
   },
   data() {
     return {
@@ -328,6 +339,18 @@ export default {
           address: 'Big American House 5',
           price: '$300.000.00',
         },
+        {
+          src: 'house5.jpg',
+          thumbnailSrc: 'house5.jpg',
+          address: 'Big American House 5',
+          price: '$300.000.00',
+        },
+        {
+          src: 'house4.jpg',
+          thumbnailSrc: 'house4.jpg',
+          address: 'Big American House 4',
+          price: '$450.000.00',
+        },
       ],
       locations: ['New York', 'Los Angeles', 'Chicago'],
       propertyTypes: ['House', 'Apartment', 'Condo'],
@@ -347,7 +370,6 @@ export default {
       const principal = this.amount - this.downPayment;
       const monthlyRate = this.rate / 12 / 100;
       const numberOfPayments = this.years * 12;
-
       if (principal > 0 && monthlyRate > 0 && numberOfPayments > 0) {
         const payment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
         this.monthlyPayment = payment;

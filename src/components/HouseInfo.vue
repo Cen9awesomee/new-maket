@@ -31,11 +31,11 @@
                     <p>Beds: {{ house.beds }}</p>
                     <p>Baths: {{ house.baths }}</p>
                     <p><v-icon color="#fff" small>fas fa-video</v-icon> {{ house.videos }}</p>
-                    <v-card flat color="white" class="info-map">
-                <v-row align="center" justify="center">
-                  <v-icon size="15" class="location-dot">fas fa-location-dot</v-icon><span>MAP</span>
-                </v-row>  
-              </v-card>
+                    <v-card flat color="#f3dede" class="info-map">
+                      <v-row align="center" justify="center">
+                        <v-icon size="15" class="location-dot">fas fa-location-dot</v-icon><span>MAP</span>
+                      </v-row>  
+                    </v-card>
                   </div>
                 </div>
               </v-carousel-item>
