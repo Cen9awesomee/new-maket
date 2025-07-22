@@ -587,7 +587,7 @@ border: 8px solid #f3dede;
 
 .price-text {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 800 !important;
   color: #ff4800 !important;
 }
 
@@ -803,3 +803,4 @@ border: 8px solid #f3dede;
   margin-top: 15px;
   margin-right: 5px;
 }
+
