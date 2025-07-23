@@ -44,11 +44,17 @@
           <v-card-text class="price-text text-center">
             ${{ house.price.toLocaleString() }}
           </v-card-text>
-          <v-card-actions class="view-details-container">
-            <div class="line-button-wrapper">
-              <v-btn class="view-button" rounded text color="primary" @click="viewDetails(house)">VIEW DETAILS</v-btn>
+          <div class="full-button-wrapper">
+            <div class="line"></div>
+            <div class="bracket-button-wrapper">
+              <div class="bracket left-bracket"></div>
+              <v-btn class="view-button" text color="primary" :ripple="false" @click="viewDetails(house)">
+                VIEW DETAILS
+              </v-btn>
+              <div class="bracket right-bracket"></div>
             </div>
-          </v-card-actions>
+            <div class="line"></div>
+          </div>
           <div class="dotted-lines"></div>
         </v-card>
       </v-col>

@@ -74,45 +74,48 @@ html, body, * {
 /* Navigation */
 .nav {
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px !important;
+  padding: 20px;
   margin-top: -61px;
-  z-index: 2;
-  position: relative;
   margin-bottom: 20px;
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  width: 100%; 
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
 }
 
-.nav-wrapper {
-  z-index: 0;
-  padding-left: 80px;
-  padding-right: 80px;
-  width: 100%;
-}
-
-.nav::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -80px;
-  width: 100px;
-  height: 100%;
-  background: url('../assets/before-wave.png') no-repeat left top;
-  background-size: contain;
-  z-index: 1;
-}
-
+/* Левая волна */
+.nav::before,
 .nav::after {
   content: '';
   position: absolute;
   top: 0;
-  right: -80px;
-  width: 100px;
+  width: 80px;
   height: 100%;
-  background: url('../assets/after-wave.png') no-repeat right top;
-  background-size: contain;
-  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
 }
+
+.nav::before {
+  left: -40px;
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M80,0 C40,0 40,100 0,100 L80,100 Z" fill=\'white\'/>\</svg>');
+}
+
+.nav::after {
+  right: -40px;
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill=\'white\'/>\</svg>');
+}
+
+
+.nav-wrapper {
+  z-index: 0;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
 
 .nav ul {
   display: flex;
@@ -175,31 +178,33 @@ html, body, * {
   margin-top: 350px;
   padding: 10px;
   text-align: center;
+  background-color: white;
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
 }
 
-.info-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -50px;
-  width: 100px;
-  height: 100%;
-  background: url('../assets/before-wave.png') no-repeat left top;
-  background-size: contain;
-  z-index: 1;
-}
-
+.info-card::before,
 .info-card::after {
   content: '';
   position: absolute;
   top: 0;
-  right: -50px;
-  width: 100px; 
+  width: 80px;
   height: 100%;
-  background: url('../assets/after-wave.png') no-repeat right top;
-  background-size: contain; 
-  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
 }
+
+.info-card::before {
+  left: -70px;
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M80,0 C40,0 40,100 0,100 L80,100 Z" fill=\'white\'/>\</svg>');
+}
+
+.info-card::after {
+  right: -70px;
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill=\'white\'/>\</svg>');
+}
+
 
 .thumbnail-carousel {
   overflow: hidden;
@@ -591,38 +596,64 @@ border: 8px solid #f3dede;
   color: #ff4800 !important;
 }
 
-.line-button-wrapper {
-  position: relative;
+.full-button-wrapper {
   display: flex;
   align-items: center;
-  width: 100%; 
+  justify-content: center;
+  width: 100%;
+  margin: 16px 0;
 }
 
-.line-button-wrapper::before,
-.line-button-wrapper::after {
-  content: "";
-  flex-grow: 1;
+.line {
   height: 1px;
   background-color: #ccc;
+  width: 120px;
 }
 
-.view-details-container {
+.bracket-button-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin: 0 -4px;
 }
 
 .view-button {
-  background-color: #f5f5f5;
+  background-color: #f3dede;
   border: 1px solid #ccc;
-  color: #003366;
+  color: #153b6d;
   font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
-  position: relative;
-  padding: 4px 16px;
-  white-space: nowrap;
-  border-radius: 20px !important;
+  border-radius: 50px;
+  padding: 8px 22px;
+  z-index: 1;
+  width: 130px;
+  
 }
+
+
+.bracket {
+  width: 16px;
+  height: 35px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.left-bracket {
+  margin-right: -2px;
+  background-image: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 40' preserveAspectRatio='none'>\<path d='M16,0 C10,5 10,15 4,20 C10,25 10,35 16,40' fill='%23f3dede' stroke='%23ccc' stroke-width='1'/>\</svg>");
+}
+
+.right-bracket {
+  margin-left: -2px;
+  background-image: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 40' preserveAspectRatio='none'>\<path d='M0,0 C6,5 6,15 12,20 C6,25 6,35 0,40' fill='%23f3dede' stroke='%23ccc' stroke-width='1'/>\</svg>");
+}
+
+
+
+
+
 
 .dotted-lines {
   position: relative;
@@ -660,12 +691,34 @@ border: 8px solid #f3dede;
   left: 0;
   right: 0;
   margin: 0 auto; 
-  width: 50%;
+  width: 30%;
   max-width: 50px; 
   padding: 10px;
   text-align: center;
-  border-top-left-radius: 50px !important; 
-  border-top-right-radius: 50px !important; 
+  background-color: #f3dede !important;
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px; 
+}
+
+.info-map::before,
+.info-map::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.info-map::before {
+  left: -17px;
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M80,0 C40,0 40,100 0,100 L80,100 Z" fill="%23f3dede"/>\</svg>');
+}
+
+.info-map::after {
+  right: -17px;
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill="%23f3dede"/>\</svg>');
 }
 
 /* Calculator */
