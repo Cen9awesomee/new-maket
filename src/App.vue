@@ -7,6 +7,7 @@
         </div>
         <div class="contact">Toll Free: 0081 123-456</div>
       </header>
+      <div class="header-shadow-layer"></div>
       <div class="main-container">
         <div class="nav-wrapper">
           <nav class="nav">
@@ -53,9 +54,9 @@
               <!-- Live Support -->
               <v-col cols="12" md="6">
                 <v-card class="card-support" flat>
-                  <v-card-text class="d-flex flex-row align-center fill-height">
+                  <v-card-text class="d-flex flex-row align-top fill-height">
                     <v-col cols="3">
-                      <v-icon size="60" color="light-blue darken-4" class="icons-cards">fas fa-headphones-simple</v-icon>
+                      <v-icon size="60" color="#37608e" class="icons-cards">fas fa-headphones-simple</v-icon>
                     </v-col>
                     <v-col cols="9">
                       <h3 class="card-title">Live Support</h3>
@@ -66,9 +67,9 @@
               
                 <!-- User Friendly -->
                 <v-card class="card-friendly" flat>
-                  <v-card-text class="d-flex flex-row align-center fill-height">
+                  <v-card-text class="d-flex flex-row align-top fill-height">
                     <v-col cols="3">
-                      <v-icon size="60" color="light-blue darken-4" class="icons-cards">fas fa-circle-user</v-icon>
+                      <v-icon size="60" color="#37608e" class="icons-cards">fas fa-circle-user</v-icon>
                     </v-col>
                     <v-col cols="9">
                       <h3 class="card-title">User Friendly</h3>
@@ -79,9 +80,9 @@
 
                 <!-- Clean Code -->
                 <v-card class="card-code" flat>
-                  <v-card-text class="d-flex flex-row align-center fill-height">
+                  <v-card-text class="d-flex flex-row align-top fill-height">
                     <v-col cols="3">
-                      <v-icon size="60" color="light-blue darken-4" class="icons-cards">fas fa-gauge-high</v-icon>
+                      <v-icon size="60" color="#37608e" class="icons-cards">fas fa-gauge-high</v-icon>
                     </v-col>
                     <v-col cols="9">
                       <h3 class="card-title">Clean Code</h3>
@@ -99,9 +100,9 @@
               <v-card-title class="login-title">USER LOGIN</v-card-title>
               <v-card-text>
                 <div class="field-label">Username</div>
-                <v-text-field v-model="username" outlined dense></v-text-field>
+                <v-text-field class="login-field" v-model="username" outlined dense></v-text-field>
                 <div class="field-label">Password</div>
-                <v-text-field v-model="password" type="password" outlined dense></v-text-field>
+                <v-text-field class="login-field" v-model="password" type="password" outlined dense></v-text-field>
                 <v-row justify="end">
                   <v-col cols="9" class="text-right">
                     <v-checkbox class="checkbox-label" v-model="checkbox" label="Remember me" dense hide-details></v-checkbox>
@@ -109,7 +110,7 @@
                 </v-row>
                 <v-col cols="12">
                   <v-row justify="end">
-                    <v-btn color="orange lighten-2" class="login-btn">Login</v-btn>
+                    <v-btn color="#b5945e" class="login-btn">Login</v-btn>
                   </v-row>
                   <v-row justify="end">
                     <a href="#" class="forgot-password">I forgot my password</a>
@@ -141,19 +142,19 @@
                 </div>
                 <div class="input-row">
                   <div class="calculate-label">Down Payment</div>
-                  <v-text-field v-model.number="downPayment" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  <v-text-field class="calculate-field" v-model.number="downPayment" outlined dense @input="resetMonthlyPayment"></v-text-field>
                 </div>
                 <div class="input-row">
                   <div class="calculate-label">Term</div>
-                  <v-text-field v-model.number="years" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  <v-text-field class="calculate-field" v-model.number="years" outlined dense @input="resetMonthlyPayment"></v-text-field>
                 </div>
                 <div class="input-row">
                   <div class="calculate-label">Rate</div>
-                  <v-text-field v-model.number="rate" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  <v-text-field class="calculate-field" v-model.number="rate" outlined dense @input="resetMonthlyPayment"></v-text-field>
                 </div>
                 <v-col cols="12">
                   <v-row justify="end">
-                    <v-btn color="orange lighten-2" class="login-btn" @click="calculatePayment">Calculate</v-btn>
+                    <v-btn color="#b5945e" class="login-btn" @click="calculatePayment">Calculate</v-btn>
                   </v-row>
                   <v-row justify="end">
                     <div class="monthly-payment">Payments will be:  ${{ monthlyPayment.toFixed(2) }}</div>
