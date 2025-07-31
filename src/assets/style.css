@@ -680,6 +680,13 @@ html, body, * {
   margin-top: 12px;
 }
 
+.video-icon {
+  background-color: #b6b6b6;
+  height: 20px;
+  width: 25px;
+  margin-right: 3px;
+}
+
 .full-button-wrapper {
   display: flex;
   align-items: center;
