@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="4">
+  <v-col cols="12" class="filter-box pa-0">
     <v-card class="search-card">
       <v-card-title class="custom-title">QUICK SEARCH</v-card-title>
       <v-card-text class="search-padding">

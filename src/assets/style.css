@@ -39,7 +39,6 @@ html, body, * {
   z-index: 0;
   height: 170px;
   overflow: hidden;
-  
 }
 
 .header::after {
@@ -52,7 +51,6 @@ html, body, * {
   height: 40px;
   pointer-events: none;
   z-index: 5 !important;
-  
 }
 
 .header-shadow-layer {
@@ -74,7 +72,6 @@ html, body, * {
   0 -1px 1px 1px rgba(0, 0, 0, 0.2),
   0 -1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-
 
 .logo {
   display: flex;
@@ -108,7 +105,6 @@ html, body, * {
   border-top-right-radius: 44px;
 }
 
-/* Левая волна */
 .nav::before,
 .nav::after {
   content: '';
@@ -119,7 +115,6 @@ html, body, * {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -1;
-  
 }
 
 .nav::before {
@@ -132,15 +127,12 @@ html, body, * {
   background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill=\'white\'/>\</svg>');
 }
 
-
 .nav-wrapper {
   z-index: 0;
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
 }
-
-
 
 .nav ul {
   display: flex;
@@ -154,15 +146,15 @@ html, body, * {
 
 .nav li {
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 550;
   font-size: 14px;
-  color: #2f5178;
+  color: #000000;
   text-transform: uppercase;
   transition: 0.3s;
 }
 
 .nav li.active {
-  text-decoration: underline;
+  color: #2f5178;
 }
 
 /* Carousel */
@@ -175,12 +167,19 @@ html, body, * {
   transition: all 0.3s;
 }
 
-
-
 .carousel-container {
   padding: 0 !important;
-  border: 8px solid #aaa5a5;
+  border: 8px solid #bfbfbf;
   margin-bottom: 5px;
+  width: 882px !important;
+}
+
+.slider-card {
+  width: 892px !important;
+}
+
+.addres-color {
+  color: #7c6658;
 }
 
 .carousel-item {
@@ -227,11 +226,10 @@ html, body, * {
   background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill=\'white\'/>\</svg>');
 }
 
-
 .thumbnail-carousel {
   overflow: hidden;
   padding: 0 !important;
-  margin-bottom: 5px;
+  margin-bottom: 16px;
 }
 
 .thumbnail-carousel .v-carousel__item {
@@ -240,7 +238,7 @@ html, body, * {
 
 .thumb-card {
   cursor: pointer;
-  border: 8px solid #aaa5a5 !important;
+  border: 8px solid #bfbfbf !important;
   padding: 0 !important;
   margin-top: 15px;
 }
@@ -249,15 +247,14 @@ html, body, * {
   border: 8px solid #fff !important;
 }
 
-.thumb-card:hover,
-.thumb-card:focus {
-  border-color: #2f5178;
-}
-
 .small-image {
   margin-right: 20px !important;
 }
 
+.button-box {
+  margin-left: -45px !important;
+  max-width: 40px !important;
+}
 
 /* Search */
 .v-sheet.v-card:not(.v-sheet--outlined) {
@@ -265,9 +262,16 @@ html, body, * {
 }
 
 .search-card {
-  height: 528px;
+  height: 536px;
   border-radius: 0 !important;
-  
+  margin-bottom: 20px !important;
+  width: 800px !important;
+  margin-left: -106px;
+}
+
+.filter-box {
+  width: calc(100% + 106px) !important;
+  max-width: none !important;
 }
 
 .search-padding {
@@ -277,7 +281,6 @@ html, body, * {
 .search-card .v-card-title {
   font-size: 1.1rem;
   padding-bottom: 18px;
-  
 }
 
 .card-title {
@@ -330,8 +333,7 @@ html, body, * {
   color: #000000 !important;
   text-decoration: none;
   font-family: 'Montserrat-Regular';
-  
-  margin-left: 1px !important;
+  margin-left: 40px;
 }
 
 .advanced-search:hover {
@@ -341,7 +343,7 @@ html, body, * {
 /* Login */
 .login-card {
   padding: 5px;
-  margin-bottom: 110px !important;
+  margin-bottom: 135px !important;
   border-radius: 0 !important;
 }
 
@@ -376,16 +378,35 @@ html, body, * {
   bottom: 0; 
 }
 
-.text-right {
-  margin-top: -20px;
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: -15px;
   margin-bottom: 10px;
-  margin-right: -60px;
+  margin-left: 45px;
+}
+
+.checkbox-label-text {
+  margin-right: 8px; 
+  font-size: 0.9rem; 
+  color: #333; 
+  margin-top: 5px;
+}
+
+.checkbox-input ::v-deep .v-input--selection-controls__input {
+  margin-right: 0 !important; 
+}
+
+.text-right {
+  text-align: right;
+  margin-right: -12px !important;
 }
 
 .login-btn {
   font-weight: bold;
   margin-bottom: 10px;
-  
+  width: 130px;
 }
 
 .login-btn.v-btn:not(.v-btn--disabled) {
@@ -414,9 +435,6 @@ html, body, * {
   font-family: 'Montserrat-Regular';
 }
 
-.checkbox-label {
-  margin-right: -20px !important;
-}
 
 .login-field {
   border-radius: 0 !important;
@@ -424,23 +442,32 @@ html, body, * {
 
 /* Cards */
 .avatar-image {
-border: 8px solid #f3dede;
+  border: 8px solid #f0f0f0;
 }
 
 .card-royal {
   height: 490px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   border-radius: 0 !important;
+}
+
+.royal-padding{
+  padding-right: 8px !important;
 }
 
 .card-support {
   height: 150px;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   border-radius: 0 !important;
 }
+
+.support-padding {
+  padding-right: 8px !important;
+}
+
 .card-friendly {
   height: 150px;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   border-radius: 0 !important;
 }
 .card-code {
@@ -472,6 +499,8 @@ border: 8px solid #f3dede;
   margin-top: -115px;
   margin-bottom: 20px;
   border-radius: 0 !important;
+  min-height: 392px;
+  position: relative;
 }
 
 .feedback-title {
@@ -511,6 +540,7 @@ border: 8px solid #f3dede;
   align-items: center;
   margin-top: 10px;
   width: 100%;
+  position: absolute;
 }
 
 .indicators-container {
@@ -522,20 +552,24 @@ border: 8px solid #f3dede;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 16px;
 }
 
 .slider-indicators {
   display: flex;
   gap: 8px;
-  margin-left: 10px;
+  margin-left: 17px;
 }
 
 .feedback-text {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   min-height: 100px;
   text-align: justify;
+  min-height: 160px; 
+  max-height: 160px; 
+  overflow-y: auto; 
 }
 
 .author-info {
@@ -589,7 +623,6 @@ border: 8px solid #f3dede;
   gap: 20px;
   font-size: 0.9rem;
   color: #666;
- 
 }
 
 .image-container {
@@ -604,7 +637,7 @@ border: 8px solid #f3dede;
   height: 100%;
   width: 100%;
   border-radius: 0px !important;
-  border: 8px solid #f3dede !important;
+  border: 8px solid #f0f0f0 !important;
 }
 
 .house-image {
@@ -618,7 +651,6 @@ border: 8px solid #f3dede;
   margin-top: 6px;
   line-height: 0; 
   font-size: 13px;
-  
 }
 
 .hover-text {
@@ -684,9 +716,7 @@ border: 8px solid #f3dede;
 }
 
 .view-button:hover {
-  
   box-shadow: none;
-  
 }
 
 .view-button:hover span { 
@@ -729,12 +759,6 @@ border: 8px solid #f3dede;
   transition: all 0.3s ease;
 }
 
-
-
-
-
-
-
 .dotted-lines {
   position: relative;
   height: 6px; 
@@ -775,7 +799,7 @@ border: 8px solid #f3dede;
   max-width: 50px; 
   padding: 10px;
   text-align: center;
-  background-color: #f3dede !important;
+  background-color: #f0f0f0 !important;
   border-top-left-radius: 44px;
   border-top-right-radius: 44px; 
 }
@@ -793,12 +817,12 @@ border: 8px solid #f3dede;
 
 .info-map::before {
   left: -17px;
-  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M80,0 C40,0 40,100 0,100 L80,100 Z" fill="%23f3dede"/>\</svg>');
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M80,0 C40,0 40,100 0,100 L80,100 Z" fill="%23f0f0f0"/>\</svg>');
 }
 
 .info-map::after {
   right: -17px;
-  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill="%23f3dede"/>\</svg>');
+  background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" preserveAspectRatio="none">\<path d="M0,0 C40,0 40,100 80,100 L0,100 Z" fill="%23f0f0f0"/>\</svg>');
 }
 
 /* Calculator */
@@ -821,6 +845,7 @@ border: 8px solid #f3dede;
 .calculator-card {
   padding: 5px;
   border-radius: 0 !important;
+  margin-bottom: 10px;
 }
 
 .calculate-field {
@@ -872,8 +897,8 @@ border: 8px solid #f3dede;
   width: 220px; 
   position: relative;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
 }
 
 .slider-label {
@@ -882,13 +907,13 @@ border: 8px solid #f3dede;
 }
 
 .left-label {
-  margin-left: -15px;
-  margin-right: 15px
+  margin-left: -70px;
+  margin-right: 70px
 }
 
 .right-label {
-  margin-right: -15spx;
-  margin-left: 20px;
+  margin-right: -71px;
+  margin-left: 70px;
 }
 
 .custom-slider {
@@ -942,4 +967,3 @@ border: 8px solid #f3dede;
   margin-top: 15px;
   margin-right: 5px;
 }
-

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="house-slider pa-0">
     <v-row>
-      <v-col v-for="(house, index) in houses" :key="house.id" cols="12" sm="4" class="house-card-col">
+      <v-col v-for="(house, index) in houses" :key="house.id" cols="12" md="4" class="house-card-col">
         <v-card class="house-card" flat>
           <v-card-text class="d-flex justify-space-between align-center">
             <v-btn icon @click="prevImage(index)">

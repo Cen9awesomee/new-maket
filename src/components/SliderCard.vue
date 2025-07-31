@@ -1,6 +1,5 @@
 <template>
-  <v-col cols="8">
-    
+  <v-col class="slider-card pa-0">
     <!-- Main image -->
     <v-carousel
       v-model="mainIndex"
@@ -9,15 +8,15 @@
       hide-delimiters
       :show-arrows="false"
       class="carousel-container"
-    >
+      >
       <v-carousel-item
         v-for="(item, i) in items"
         :key="i"
         :src="require(`@/assets/houses/${item.src}`)"
-      >
+       >
         <v-row class="fill-height" align="center" justify="center">
           <v-card flat color="white" class="info-card">
-            <span>{{ item.address }}<br>{{ item.price }}</span>
+            <span class="addres-color">{{ item.address }}</span><br><span>{{ item.price }}</span>
           </v-card>
         </v-row>
       </v-carousel-item>
@@ -25,16 +24,15 @@
 
     <!-- Thumbnails -->
     <v-row no-gutters class="align-center">
-      
       <!-- Small images -->
-      <v-col cols="11" class="pa-0">
+      <v-col cols="12" class="pa-0">
         <v-carousel
           v-model="thumbnailIndex"
           height="135"
           :show-arrows="false"
           class="thumbnail-carousel"
           hide-delimiters
-        >
+         >
           <v-carousel-item class="pa-0">
             <v-row class="pa-0 ma-0" no-gutters>
               <v-col
@@ -42,14 +40,14 @@
                 :key="i"
                 cols="2"
                 class="small-image"
-              >
+               >
                 <v-card
                   @click="mainIndex = getItemIndex(i)"
                   flat
                   tile
                   class="thumb-card"
                   :class="{ 'active-thumb': mainIndex === getItemIndex(i) }"
-                >
+                 >
                   <v-img
                     :src="require(`@/assets/houses/${item.src}`)"
                     height="100"
@@ -63,7 +61,7 @@
       </v-col>
 
       <!-- Arrow buttons -->
-      <v-col cols="1" class="pa-0 d-flex flex-column align-end">
+      <v-col class="button-box pa-0 d-flex flex-column align-start">
         <v-btn icon class="round-button mb-4" @click="prevSlide">
           <v-icon>fas fa-chevron-left</v-icon>
         </v-btn>

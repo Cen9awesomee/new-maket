@@ -13,181 +13,161 @@
           <nav class="nav">
             <ul>
               <li v-for="item in navItems" :key="item" :class="{ active: activeTab === item }" @click="activeTab = item">
-              {{ item }}
+                {{ item }}
               </li>
             </ul>
           </nav>
         </div>
         <v-container fluid class="pa-0">
           <v-row>
-            <SliderCard 
-              :items="items"
-              :cycle="true" 
-            />
-            <FilterBox
-              :locations="locations"
-              :property-types="propertyTypes"
-              :square-feet-options="squareFeetOptions"
-              :bed-options="bedOptions"
-              :bath-options="bathOptions"
-              :price-options="priceOptions"   
-            />
+            <!-- Left column -->
+            <v-col cols="12" md="9" order="1">
+              <SliderCard :items="items" :cycle="true" />
+              <v-row>
+                <!-- About Royal Estate -->
+                <v-col cols="12" md="6" class="royal-padding">
+                  <v-card class="card-royal" flat>
+                    <v-card-text class="text-center d-flex flex-column justify-center align-center fill-height">
+                      <v-avatar size="250" class="mt-2 avatar-image">
+                        <img src="@/assets/avatar.jpg" />
+                      </v-avatar>
+                      <h3 class="mt-3">About Royal Estate</h3>
+                      <p class="card-text-royal">Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history.</p>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+
+                <v-col cols="12" md="6" class="support-padding">
+                  <!-- Live Support -->
+                  <v-card class="card-support" flat>
+                    <v-card-text class="d-flex flex-row align-top fill-height">
+                      <v-col cols="3">
+                        <v-icon size="60" color="#37608e" class="icons-cards">fas fa-headphones-simple</v-icon>
+                      </v-col>
+                      <v-col cols="9">
+                        <h3 class="card-title">Live Support</h3>
+                        <p class="card-text">Get instant assistance from our dedicated support team. Get instant assistance from our dedicated.</p>
+                      </v-col>
+                    </v-card-text>
+                  </v-card>
+                  <!-- User Friendly -->
+                  <v-card class="card-friendly" flat>
+                    <v-card-text class="d-flex flex-row align-top fill-height">
+                      <v-col cols="3">
+                        <v-icon size="60" color="#37608e" class="icons-cards">fas fa-circle-user</v-icon>
+                      </v-col>
+                      <v-col cols="9">
+                        <h3 class="card-title">User Friendly</h3>
+                        <p class="card-text">Enjoy a seamless and intuitive user experience. Enjoy a seamless and intuitive user experience.</p>
+                      </v-col>
+                    </v-card-text>
+                  </v-card>
+                  <!-- Clean Code -->
+                  <v-card class="card-code" flat>
+                    <v-card-text class="d-flex flex-row align-top fill-height">
+                      <v-col cols="3">
+                        <v-icon size="60" color="#37608e" class="icons-cards">fas fa-gauge-high</v-icon>
+                      </v-col>
+                      <v-col cols="9">
+                        <h3 class="card-title">Clean Code</h3>
+                        <p class="card-text">Built with high-quality, maintainable code standards. Built with high-quality, maintainable code.</p>
+                      </v-col>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+
+                <!-- HouseInfo -->
+                <v-col cols="12">
+                  <HouseInfo :houses="houseData" />
+                </v-col>
+              </v-row>
+            </v-col>
+
+            <!-- Right column -->
+            <v-col cols="12" md="3" order="2">
+              <FilterBox
+                :locations="locations"
+                :property-types="propertyTypes"
+                :square-feet-options="squareFeetOptions"
+                :bed-options="bedOptions"
+                :bath-options="bathOptions"
+                :price-options="priceOptions"
+                class="filter-box"
+              />
+              <!-- Login -->
+              <v-card class="login-card" flat>
+                <v-card-title class="login-title">USER LOGIN</v-card-title>
+                <v-card-text>
+                  <div class="field-label">Username</div>
+                  <v-text-field class="login-field" v-model="username" outlined dense></v-text-field>
+                  <div class="field-label">Password</div>
+                  <v-text-field class="login-field" v-model="password" type="password" outlined dense></v-text-field>
+                  <v-row justify="end">
+                    <v-col cols="9" class="text-right">
+                      <div class="checkbox-wrapper">
+                        <span class="checkbox-label-text">Remember Me</span>
+                        <v-checkbox v-model="checkbox" dense hide-details class="checkbox-input" />
+                      </div>
+                    </v-col>
+                  </v-row>
+                  <v-col cols="12">
+                    <v-row justify="end">
+                      <v-btn color="#b5945e" class="login-btn">Login</v-btn>
+                    </v-row>
+                    <v-row justify="end">
+                      <a href="#" class="forgot-password">I forgot my password</a>
+                    </v-row>
+                    <v-row justify="end">
+                      <a href="#" class="create-account">Create an account</a>
+                    </v-row>
+                  </v-col>
+                </v-card-text>
+              </v-card>
+
+              <!-- Testimonials -->
+              <FeedbackSlider :feedback-items="feedbackData" />
+
+              <!-- Calculator -->
+              <v-card class="calculator-card" flat>
+                <v-card-title class="login-title">LOAN CALCULATOR</v-card-title>
+                <v-card-text>
+                  <div class="input-row">
+                    <div class="calculate-label">Amount</div>
+                    <v-text-field class="calculate-field" v-model.number="amount" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  </div>
+                  <div class="input-row">
+                    <div class="calculate-label">Down Payment</div>
+                    <v-text-field class="calculate-field" v-model.number="downPayment" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  </div>
+                  <div class="input-row">
+                    <div class="calculate-label">Term</div>
+                    <v-text-field class="calculate-field" v-model.number="years" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  </div>
+                  <div class="input-row">
+                    <div class="calculate-label">Rate</div>
+                    <v-text-field class="calculate-field" v-model.number="rate" outlined dense @input="resetMonthlyPayment"></v-text-field>
+                  </div>
+                  <v-col cols="12">
+                    <v-row justify="end">
+                      <v-btn color="#b5945e" class="login-btn" @click="calculatePayment">Calculate</v-btn>
+                    </v-row>
+                    <v-row justify="end">
+                      <div class="monthly-payment">Payments will be: ${{ monthlyPayment.toFixed(2) }}</div>
+                    </v-row>
+                  </v-col>
+                </v-card-text>
+              </v-card>
+            </v-col>
           </v-row>
         </v-container>
-        <v-row class="card-row">
-          <v-col cols="12" md="9">
-            <v-row>
-
-              <!-- About Royal Estate -->
-              <v-col cols="12" md="6">
-                <v-card class="card-royal" flat>
-                  <v-card-text class="text-center d-flex flex-column justify-center align-center fill-height">
-                    <v-avatar size="200" class="mt-2 avatar-image">
-                      <img src="@/assets/avatar.jpg" />
-                    </v-avatar>
-                    <h3 class="mt-3">About Royal Estate</h3>
-                    <p class="card-text-royal">Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history. Learn more about our premium real estate services and rich history.</p>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-
-              <!-- Live Support -->
-              <v-col cols="12" md="6">
-                <v-card class="card-support" flat>
-                  <v-card-text class="d-flex flex-row align-top fill-height">
-                    <v-col cols="3">
-                      <v-icon size="60" color="#37608e" class="icons-cards">fas fa-headphones-simple</v-icon>
-                    </v-col>
-                    <v-col cols="9">
-                      <h3 class="card-title">Live Support</h3>
-                      <p class="card-text">Get instant assistance from our dedicated support team. Get instant assistance from our dedicated.</p>
-                    </v-col>
-                  </v-card-text>
-                </v-card>
-              
-                <!-- User Friendly -->
-                <v-card class="card-friendly" flat>
-                  <v-card-text class="d-flex flex-row align-top fill-height">
-                    <v-col cols="3">
-                      <v-icon size="60" color="#37608e" class="icons-cards">fas fa-circle-user</v-icon>
-                    </v-col>
-                    <v-col cols="9">
-                      <h3 class="card-title">User Friendly</h3>
-                      <p class="card-text">Enjoy a seamless and intuitive user experience. Enjoy a seamless and intuitive user experience.</p>
-                    </v-col>
-                  </v-card-text>
-                </v-card>
-
-                <!-- Clean Code -->
-                <v-card class="card-code" flat>
-                  <v-card-text class="d-flex flex-row align-top fill-height">
-                    <v-col cols="3">
-                      <v-icon size="60" color="#37608e" class="icons-cards">fas fa-gauge-high</v-icon>
-                    </v-col>
-                    <v-col cols="9">
-                      <h3 class="card-title">Clean Code</h3>
-                      <p class="card-text">Built with high-quality, maintainable code standards. Built with high-quality, maintainable code.</p>
-                    </v-col>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-col>
-
-          <!-- Login -->
-          <v-col cols="12" md="3">
-            <v-card class="login-card" flat>
-              <v-card-title class="login-title">USER LOGIN</v-card-title>
-              <v-card-text>
-                <div class="field-label">Username</div>
-                <v-text-field class="login-field" v-model="username" outlined dense></v-text-field>
-                <div class="field-label">Password</div>
-                <v-text-field class="login-field" v-model="password" type="password" outlined dense></v-text-field>
-                <v-row justify="end">
-                  <v-col cols="9" class="text-right">
-                    <v-checkbox class="checkbox-label" v-model="checkbox" label="Remember me" dense hide-details></v-checkbox>
-                  </v-col>
-                </v-row>
-                <v-col cols="12">
-                  <v-row justify="end">
-                    <v-btn color="#b5945e" class="login-btn">Login</v-btn>
-                  </v-row>
-                  <v-row justify="end">
-                    <a href="#" class="forgot-password">I forgot my password</a>
-                  </v-row>
-                  <v-row justify="end">
-                    <a href="#" class="create-account">Create an account</a>
-                  </v-row>
-                </v-col>
-              </v-card-text>
-            </v-card>
-          </v-col>
-
-          <!-- HouseInfo -->
-          <v-col cols="12" md="9">
-            <HouseInfo :houses="houseData"/>
-          </v-col>
-
-          <!-- Testimonials -->
-          <v-col cols="12" md="3">
-            <FeedbackSlider :feedback-items="feedbackData"/>
-
-           <!-- Calculator -->
-           <v-card class="calculator-card" flat>
-             <v-card-title class="login-title">LOAN CALCULATOR</v-card-title>
-             <v-card-text>
-                <div class="input-row">
-                  <div class="calculate-label">Amount</div>
-                  <v-text-field class="calculate-field" v-model.number="amount" outlined dense @input="resetMonthlyPayment"></v-text-field>
-                </div>
-                <div class="input-row">
-                  <div class="calculate-label">Down Payment</div>
-                  <v-text-field class="calculate-field" v-model.number="downPayment" outlined dense @input="resetMonthlyPayment"></v-text-field>
-                </div>
-                <div class="input-row">
-                  <div class="calculate-label">Term</div>
-                  <v-text-field class="calculate-field" v-model.number="years" outlined dense @input="resetMonthlyPayment"></v-text-field>
-                </div>
-                <div class="input-row">
-                  <div class="calculate-label">Rate</div>
-                  <v-text-field class="calculate-field" v-model.number="rate" outlined dense @input="resetMonthlyPayment"></v-text-field>
-                </div>
-                <v-col cols="12">
-                  <v-row justify="end">
-                    <v-btn color="#b5945e" class="login-btn" @click="calculatePayment">Calculate</v-btn>
-                  </v-row>
-                  <v-row justify="end">
-                    <div class="monthly-payment">Payments will be:  ${{ monthlyPayment.toFixed(2) }}</div>
-                  </v-row>
-                </v-col>
-             </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
       </div>
 
       <!-- Footer -->
-      <v-footer
-        dark
-        padless
-        class="footer-container"
-        >
-        <v-card
-          flat
-          tile
-          color="#2f5178"
-          class="text-center"
-          >
+      <v-footer dark padless class="footer-container">
+        <v-card flat tile color="#2f5178" class="text-center">
           <v-card-text>
-            <v-btn
-              v-for="icon in icons"
-              :key="icon"
-              class="mx-4 white--text"
-              icon
-              >
-              <v-icon size="24px">
-                {{ icon }}
-              </v-icon>
+            <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+              <v-icon size="24px">{{ icon }}</v-icon>
             </v-btn>
           </v-card-text>
           <v-card-text class="white--text pt-0">
@@ -286,7 +266,7 @@ export default {
 
       feedbackData: [
         {
-          text: 'Great service and excellent properties! Highly recommend.',
+          text: 'Great service and excellent properties! Highly recommend. Great service and excellent properties! Highly recommend. Great service and excellent properties! Highly recommend.',
           author: 'John Doe',
         },
         {
