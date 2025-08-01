@@ -34,12 +34,12 @@
             <v-select v-model="maxPrice" label="Max price" :items="priceOptions" :menu-props="{ bottom: true, offsetY: true }" outlined dense class="custom-select"></v-select>
           </v-col>
         </v-row>
-        <v-row justify="end">
-          <v-col cols="6">
-            <v-btn block color="#3e6792" class="custom-btn">Search</v-btn>
+        <div class="d-flex flex-column justify-center align-end">
+          
+            <v-btn color="#3e6792" class="custom-btn">Search</v-btn>
             <a href="#" class="advanced-search">Advanced Search</a>
-          </v-col>
-        </v-row>
+          
+        </div>
       </v-card-text>
     </v-card>
   </v-col>

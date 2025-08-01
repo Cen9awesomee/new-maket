@@ -102,14 +102,12 @@
                   <v-text-field class="login-field" v-model="username" outlined dense></v-text-field>
                   <div class="field-label">Password</div>
                   <v-text-field class="login-field" v-model="password" type="password" outlined dense></v-text-field>
-                  <v-row justify="end">
-                    <v-col cols="9" class="text-right">
+                  <div class="d-flex justify-end align-center">
                       <div class="checkbox-wrapper">
                         <span class="checkbox-label-text">Remember Me</span>
                         <v-checkbox v-model="checkbox" dense hide-details class="checkbox-input" />
                       </div>
-                    </v-col>
-                  </v-row>
+                    </div>
                   <v-col cols="12">
                     <v-row justify="end">
                       <v-btn color="#b5945e" class="login-btn">Login</v-btn>

@@ -22,7 +22,7 @@ html, body, * {
 }
 
 .main-container {
-  background-color: #cfcbcb;
+  background-color: #e1e1e1;
   padding: 0 300px;
   z-index: 1000;
 }
@@ -313,10 +313,11 @@ html, body, * {
   color: #0f0f0f;
 }
 
-.custom-btn {
-  margin-top: -30px !important;
-  font-weight: bold;
+.custom-btn.v-btn {
+  margin-top: -5px !important;
+  font-weight: 300;
   margin-bottom: 15px;
+  width: 165px;
 }
 .custom-btn.v-btn:not(.v-btn--disabled) {
   color: white !important;
@@ -417,7 +418,8 @@ html, body, * {
 .forgot-password,
 .create-account {
   font-size: 0.9rem;
-  color: #2f5178;
+  font-weight: 300;
+  color: #000000 !important;
   text-decoration: none;
   font-family: 'Montserrat-Regular';
 }
@@ -552,7 +554,7 @@ html, body, * {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-right: 16px;
+  margin-right: 21px;
 }
 
 .slider-indicators {
@@ -633,10 +635,12 @@ html, body, * {
 }
 
 .left-caret {
-  margin-right: 10px;
+  margin-right: 19px;
 }
+
+
 .right-caret {
-  margin-left: 10px;
+  margin-left: 19px;
 }
 
 .image-wrapper {
