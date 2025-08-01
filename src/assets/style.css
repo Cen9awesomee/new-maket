@@ -18,7 +18,7 @@ html, body, * {
 .far,
 .fal,
 .fab {
-  font-family: 'FontAwesome' !important; 
+  font-family: 'Font Awesome 5 Pro' !important; 
 }
 
 .main-container {
@@ -489,7 +489,7 @@ html, body, * {
 }
 
 .icons-cards {
-  margin-left: 5px;
+  margin-left: 1px;
   margin-top: 5px;
 }
 
@@ -630,6 +630,13 @@ html, body, * {
   height: 210px;
   overflow: hidden;
   border-radius: 0 !important;
+}
+
+.left-caret {
+  margin-right: 10px;
+}
+.right-caret {
+  margin-left: 10px;
 }
 
 .image-wrapper {

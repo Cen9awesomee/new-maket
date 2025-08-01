@@ -12,6 +12,7 @@
         </v-card-text>
       </v-carousel-item>
     </v-carousel>
+   
     <div class="slider-controls">
       <div class="indicators-container">
         <v-item-group v-model="currentSlide" class="slider-indicators" mandatory>

@@ -42,7 +42,7 @@
                   <v-card class="card-support" flat>
                     <v-card-text class="d-flex flex-row align-top fill-height">
                       <v-col cols="3">
-                        <v-icon size="60" color="#37608e" class="icons-cards">fas fa-headphones-simple</v-icon>
+                        <v-icon size="70" color="#37608e" class="icons-cards">fas fa-headphones-simple</v-icon>
                       </v-col>
                       <v-col cols="9">
                         <h3 class="card-title">Live Support</h3>
@@ -54,7 +54,7 @@
                   <v-card class="card-friendly" flat>
                     <v-card-text class="d-flex flex-row align-top fill-height">
                       <v-col cols="3">
-                        <v-icon size="60" color="#37608e" class="icons-cards">fas fa-circle-user</v-icon>
+                        <v-icon size="70" color="#37608e" class="icons-cards">fas fa-universal-access</v-icon>
                       </v-col>
                       <v-col cols="9">
                         <h3 class="card-title">User Friendly</h3>

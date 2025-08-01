@@ -5,14 +5,14 @@
         <v-card class="house-card" flat>
           <v-card-text class="d-flex justify-space-between align-center">
             <v-btn icon @click="prevImage(index)">
-              <v-icon size="40" color="#e4e4e4">mdi mdi-menu-left-outline</v-icon>
+              <v-icon class="left-caret" size="40" color="#e4e4e4">far fa-caret-left</v-icon>
             </v-btn>
             <div class="image-info">
-              <v-icon size="18" color="#2f5178">fas fa-camera</v-icon>
+              <v-icon size="18" color="#2f5178">fas fa-camera-alt</v-icon>
               <span>{{ house.images.length }} IMAGES AVAILBLE</span>
             </div>
             <v-btn icon @click="nextImage(index)">
-              <v-icon size="40" color="#e4e4e4">mdi mdi-menu-right-outline</v-icon>
+              <v-icon class="right-caret" size="40" color="#e4e4e4">far fa-caret-right</v-icon>
             </v-btn>
           </v-card-text>
           <v-card-text class="image-container">
@@ -30,7 +30,7 @@
                     <p>{{ house.address }}</p>
                     <p>Beds: {{ house.beds }}</p>
                     <p>Baths: {{ house.baths }}</p>
-                    <p><v-icon size="15" color="#302f32" class="video-icon">fas fa-video</v-icon> {{ house.videos }}</p>
+                    <p><v-icon size="15" color="#302f32" class="video-icon">far fa-camera-movie</v-icon> {{ house.videos }}</p>
                     <v-card flat color="#f3dede" class="info-map">
                       <v-row align="center" justify="center">
                         <v-icon size="15" class="location-dot">fas fa-location-dot</v-icon><span>MAP</span>
